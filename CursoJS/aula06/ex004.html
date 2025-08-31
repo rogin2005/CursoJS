@@ -14,9 +14,11 @@
     
     <script>
         var nome = window.prompt('Qual o seu nome?') // pergunta o nome
+        var salario = Number(window.prompt('Qual o seu salário?'))
         document.write(`que legal, seu nome tem ${nome.length} letras. <br>`) // mostra o tamanho do nome e quebra linha com <br>
         document.write(`Seu nome em maiúsculas fica: <strong>${nome.toUpperCase()}</strong><br>`) // joga o nome para maiúsculas e exibe
-        document.write(`Seu nome em minúsculas é: ${nome.toLowerCase()}`) // joga o nome para minúsculas e exibe
+        document.write(`Seu nome em minúsculas é: ${nome.toLowerCase()}<br>`) // joga o nome para minúsculas e exibe
+        document.write(`Legal seu salário é R$${salario.toFixed(2).replace('.', ',')}`)
     </script>
 </body>
 </html>
