@@ -17,20 +17,28 @@
     </style>
 </head>
 <body>
-    <div id="area" onclick="clicar()" onmouseenter="entrar()" onmouseout="sair()">
+    <div id="area">
         Interaja...
     </div>
     <script>
+
+        // quando a variável tá dentro da função só serve pra ela, quando tá fora serve pra todas as funções...
+
         var a = window.document.getElementById('area')
+        a.addEventListener('click', clicar)
+        a.addEventListener('mouseenter', entrar)
+        a.addEventListener('mouseout', sair)
 
         function clicar() {
             a.innerText = 'Clicouu!!!'
+            a.style.background = 'red'
         }
         function entrar() {
             a.innerText = 'Entrou!!!!!!'
         }
         function sair() {
             a.innerText = 'Saiu!!!'
+            a.style.background = 'green'
         }
     </script>
 </body>
