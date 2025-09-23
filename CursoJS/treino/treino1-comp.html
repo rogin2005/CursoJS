@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Números</title>
+    <style>
+        body {
+            font: normal 20pt Arial;
+        }
+    </style>
+</head>
+<body>
+    <h1>Comparador de números</h1>
+    <input type="text" name="n1" id="n1" placeholder="primeiro número">
+    <input type="text" name="n2" id="n2" placeholder="segundo número">
+    <input type="button" value="comparar" onclick="comparar()">
+    <input type="button" value="reiniciar" onclick="reiniciar()">
+    <div>
+        <p id="res"></p>
+    </div>
+    <script>
+        function comparar() {
+            var n1 = Number(document.getElementById('n1').value)
+            var n2 = Number(document.getElementById('n2').value)
+            var res = document.getElementById('res')
+
+            if (n1 > n2) {
+                res.innerHTML = `${n1} é maior que ${n2}`
+            } else if (n2 > n1) {
+                res.innerHTML = `${n2} é maior que ${n1}`
+            } else if (n1 == n2) {
+                res.innerHTML = `${n1} e ${n2} são iguais!`
+            } else {
+                res.innerHTML = "Ops, digite valores válidos pf!"
+            }
+
+            //res.innerHTML = `O primeiro valor digitado é ${n1}`
+        }
+
+        function reiniciar() {
+            window.location.reload()
+        }
+    </script>
+</body>
+</html>
