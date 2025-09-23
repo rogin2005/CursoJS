@@ -12,11 +12,45 @@
 </head>
 <body>
     <h1>Calculadora JS</h1>
-    <input type="number" name="n1" id="n1">
-    <input type="text">
-    <input type="number" name="n2" id="n2">
+    <input type="number" name="n1" id="n1" placeholder="primeiro numero">
+    <input type="text" name="operador" id="operador" placeholder="somente (+, -, /, *)">
+    <input type="number" name="n2" id="n2" placeholder="segundo numero">
+    <input type="button" value="Calcular" onclick="calcular()">
+    <input type="button" value="Reiniciar" onclick="reiniciar()">
+    <div>
+        <p id="res">
+        </p>
+    </div>
     <script>
-        
+
+        function calcular() {
+            var n1 = Number(document.querySelector('input#n1').value)
+            var n2 = Number(document.querySelector('input#n2').value)
+            var operador = document.querySelector('input#operador').value
+            operador = operador.trim()
+            var res = document.querySelector('p#res')
+            switch (operador) {
+                case "+":
+                    res.innerHTML = `${n1} + ${n2} = ${n1 + n2}`
+                    break
+                case "-":
+                    res.innerHTML = `${n1} - ${n2} = ${n1 - n2}`
+                    break
+                case "/":
+                    res.innerHTML = `${n1} / ${n2} = ${n1 / n2}`
+                    break
+                case "*":
+                    res.innerHTML = `${n1} * ${n2} = ${n1 * n2}`
+                    break
+                default:
+                    res.innerHTML = "Digite um operador válido para estar fazendo sua conta!"
+                    break
+            }
+        }
+
+        function reiniciar() {
+            location.reload()
+        }
     </script>
 </body>
 </html>
