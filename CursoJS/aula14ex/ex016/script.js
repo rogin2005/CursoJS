@@ -14,20 +14,29 @@ function Contar() {
     console.log(fim)
     console.log(passo)
 
-    if (passo == 0) {
+    if (passo <= 0) {
         passo = 1
         alert("Não dá para contar com passo 0, consdiderando passo 1 para continuar contagem!")
     }
 
-    if ( inicio < 0 || fim <= inicio || !passo || !fim) {
+    if (ini == "" || pas == "" || fi == "") {
         resultado.innerHTML = "Impossível contar!"
     } else {
-        for (inicio ; inicio <= fim; inicio += passo) {
-            resultado.innerHTML += `${inicio} 👉`
+        if (inicio < fim) {
+            // contagem crescente
+            for (inicio; inicio <= fim; inicio += passo) {
+                resultado.innerHTML += `${inicio} 👉`
+            }
+            resultado.innerHTML += "🏁"
+        } else {
+            // contagem decrescente
+            for (inicio; inicio >= fim; inicio -= passo) {
+                resultado.innerHTML += `${inicio} 👉`
+            }
+            resultado.innerHTML += "🏁"
         }
-        resultado.innerHTML += "🏁"
     }
-    
-console.log(passo)
-    
+
+    console.log(passo)
+
 }
