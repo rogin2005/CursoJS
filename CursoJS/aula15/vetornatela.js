@@ -1,6 +1,8 @@
 let valores = [5, 6, 4, 8, 1, 3]
+let nomes = ['roger', 'dayvi', 'frank', 'cool']
 
 valores.sort()
+nomes.sort()
 
 //console.log(valores)
 /*
@@ -31,3 +33,6 @@ if (pos == -1) {
 } else {
     console.log(`O valor está na posição ${pos}`)
 }
+
+
+console.log(`lista de nomes: ${nomes}`)
