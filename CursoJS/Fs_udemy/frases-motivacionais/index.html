@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+
+    <!-- Javascript -->
+    <script type="text/javascript">
+
+        function gerarFrase() {
+            
+            let resultado = document.getElementById('resultado')
+            const numeroAleatorio = Math.floor(Math.random() * 10)
+            const frases = [
+                "O único limite para sua conquista é a altura dos seus sonhos.",
+                "Progresso, não perfeição – cada passo importa.",
+                "Você não precisa ver toda a escada, apenas dê o primeiro degrau.", 
+                "A persistência transforma o 'um dia' em 'hoje'.",
+                "Seu único concorrente é a pessoa que você foi ontem.",
+                "Grandes coisas nunca surgiram de zonas de conforto.",
+                "Cada erro é um capítulo, não o fim da história.",
+                "O 'agora' que você dedica molda o 'amanhã' que você viverá.",
+                "A motivação te move, a disciplina te mantém em movimento.",
+                "Você é mais forte do que suas desculpas e mais capaz do que imagina."
+            ]
+
+            //console.log(Math.floor(Math.random() * 10)); - gera número aleatorio de 0 a 9
+
+            resultado.innerHTML = frases[numeroAleatorio]
+
+        }
+
+    </script>
+
+    <title>Frases motivacionais</title>
+
+  </head>
+
+  <body>
+    
+    <div class="container mt-5">
+        <div class="row">
+          <div class="col-md-12">
+
+            <div class="jumbotron">
+              <h1 class="text-success display-5">Frases motivacionais</h1>
+              <hr>
+
+              <h2 class="display-4" id="resultado">
+                Em busca do ótimo não se faz o bom.
+              </h2>
+
+              <hr>
+              <button type="button" class="btn btn-success btn-lg" onclick="gerarFrase()">Nova frase</button>
+              </p>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+  </body>
+
+</html>
