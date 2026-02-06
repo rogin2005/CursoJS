@@ -1,0 +1,12 @@
+#destaque {
+    background-color: red;
+}
+
+ul li.primeiro {
+    background-color: orange;
+}
+
+.destaque {
+    color: white;
+    background-color: black;
+}
