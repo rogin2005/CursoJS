@@ -12,18 +12,27 @@
     <h1 class="vermelho">Título do site</h1>
     <p>Subtitulo</p>
     <div>Área de conteúdo 2</div>
+    <h1 class="vermelho">Título do site 2</h1>
 
     <ul>
         <li class="primeiro">Item 1</li>
         <li>Item 2</li>
     </ul>
 
-    <button onclick="mudarConteudo()">Clique aqui</button>
+    <ul>
+        <li class="primeiro">Item 1 alterado</li>
+        <li>Item 2 alterado</li>
+    </ul>
+
+    <input type="text" name="nome">
+    <input type="text" name="sobrenome">
+
+    <button onclick="executar()">Clique aqui</button>
 
     <script type="text/javascript">
 
         function executar() {
-            const obj = document.querySelector('ul li.primeiro')
+            const obj = document.querySelector('li.primeiro')
             obj.innerHTML = 'teste'
             obj.classList.add("destaque")
         }
@@ -32,13 +41,16 @@
         //console.log(obj.textContent)
 
         const mudarConteudo = () => {
-            const obj = document.querySelector('ul li.primeiro')
+            const obj = document.querySelector('li.primeiro')
             obj.innerHTML = "teste"
             obj.classList.add("destaque")
         }
 
-        //const colecao = document.getElementsByTagName('li')
-        const colecao = document.getElementsByClassName('li')
+        //const colecao = document.getElementsByTagName('li') //HTMLCollection - precisa transformar
+        //const obj = document.getElementsByClassName('vermelho') //HTMLCollection - precisa transformar
+        //const obj = document.getElementsByName('nome') //Nodelist - pode usar metodos do array nativo
+        const obj = document.querySelectorAll('li.primeiro') //Nodelist - pode usar metodos do array nativo
+
         /* for(let i=0; i < obj.length; i++) {
             console.log(obj[i].textContent)
         } 
@@ -48,8 +60,8 @@
             console.log(item.textContent)
         }
         lista.forEach(funcao) */
-        //console.log(lista.reduce)
-
+        console.log(obj.item(1).textContent)
+        
     </script>
 
 </body>
