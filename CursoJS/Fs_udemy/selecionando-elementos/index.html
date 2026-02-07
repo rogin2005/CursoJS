@@ -11,10 +11,11 @@
     <div id="destaque">Área de conteúdo</div>
     <h1 class="vermelho">Título do site</h1>
     <p>Subtitulo</p>
+    <div>Área de conteúdo 2</div>
 
     <ul>
         <li class="primeiro">Item 1</li>
-        <li>Item 1</li>
+        <li>Item 2</li>
     </ul>
 
     <button onclick="mudarConteudo()">Clique aqui</button>
@@ -28,14 +29,26 @@
         }
 
         //const obj = document.getElementById('destaque')
-        const obj = document.querySelector('ul li.primeiro')
-        console.log(obj.textContent)
+        //console.log(obj.textContent)
 
         const mudarConteudo = () => {
+            const obj = document.querySelector('ul li.primeiro')
             obj.innerHTML = "teste"
             obj.classList.add("destaque")
-            console.log("valor alterado: " + obj.textContent )
         }
+
+        //const colecao = document.getElementsByTagName('li')
+        const colecao = document.getElementsByClassName('li')
+        /* for(let i=0; i < obj.length; i++) {
+            console.log(obj[i].textContent)
+        } 
+        const lista = Array.from(colecao)
+        const funcao = function(item,i,arr) {
+            //console.log(item)
+            console.log(item.textContent)
+        }
+        lista.forEach(funcao) */
+        //console.log(lista.reduce)
 
     </script>
 
