@@ -1,4 +1,9 @@
-#destaque {
+
+div#itens {
+    background-color: orange;
+}
+
+/* #destaque {
     background-color: red;
 }
 
@@ -8,4 +13,4 @@ ul li.primeiro {
 .destaque {
     color: white;
     background-color: black;
-}
+} */
