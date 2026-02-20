@@ -4,7 +4,7 @@
   "description": "Servidor simulado para prática do protocolo de comunicação HTTP (arquitetura de rede Client-Server)",
   "license": "ISC",
   "author": "Roger Ferreira",
-  "type": "commonjs",
+  "type": "module",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
