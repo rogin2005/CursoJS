@@ -25,7 +25,13 @@ const hostname = 'localhost';
 const port = 3001;
 
 const server = createServer((req, res) => {
-  res.end('Webservice MockServer');
+
+    // Cabeçalhos da resposta (response)
+    res.setHeader("Content-Type", "application/json")
+    // Status HTTP
+    res.statusCode = 200; // OK
+    // Retorna o corpo (body) da resposta
+    res.end(mockData);
 });
 
 server.listen(port, hostname, () => {
