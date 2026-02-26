@@ -3,7 +3,7 @@ const populateMovies = async () => {
     movies.innerHTML = ''
 
     const response = await fetch('http://localhost:3001')
-    const mockData = response.json()
+    const mockData = await response.json()
 
     console.log(mockData)
     
