@@ -4,6 +4,15 @@ type CartItem = {
     price: number;
 };
 
+type Address = {
+    cep: string;
+    default: boolean;
+};
+
+type Customer = {
+    addresses: Address[];
+};
+
 //TODO ShoppingCart
 type ShoppingCart = {
     cartItems: CartItem[];
@@ -18,6 +27,18 @@ const shoppingCart: ShoppingCart = {
     ],
 };
 
+const addresses: Address[] = [
+    { cep: '00000-000', default: false },
+    { cep: '00000-001', default: false },
+    { cep: '00000-002', default: true },
+];
+
+const customer: Customer = {
+    addresses: addresses,
+};
+
+//console.log('Detalhes do customer', customer);
+
 export function calculateTotal(shoppingCart: ShoppingCart): number {
     const total = shoppingCart.cartItems.reduce(
         (acc, item) => acc + item.price,
@@ -30,3 +51,13 @@ export function calculateTotal(shoppingCart: ShoppingCart): number {
 const total = calculateTotal(shoppingCart);
 
 console.log(`Total do carrinho: R$ ${total.toFixed(2)}`);
+
+export function getPrincipalAddress(customer: Customer): Address | undefined {
+    return customer.addresses.find((address) => address.default);
+}
+
+const principalAddress = getPrincipalAddress(customer);
+
+if (principalAddress !== undefined) {
+    console.log(principalAddress);
+}
