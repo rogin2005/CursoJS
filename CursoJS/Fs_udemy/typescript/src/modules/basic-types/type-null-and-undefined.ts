@@ -21,6 +21,11 @@ export const bootstrap = (): void => {
         title: 'Curso de Typescript',
     };
 
+    page.handlerPage = (): void => {
+        console.log('Executou a função')
+    }
+
     console.log('Page subtitle: ', page.subtitle);
     console.log('Page handlerPage: ', page.handlerPage);
+    console.log('Page handlerPage: ', page.handlerPage());
 };
