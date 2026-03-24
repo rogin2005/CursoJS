@@ -13,10 +13,11 @@ export const bootstrap = (): void => {
         }
     }
 
-    class CheckingAccount {
+    class CheckingAccount extends BankAccount {
         private overdraftLimit: number;
 
-        constructor(overdraftLimit: number) {
+        constructor(holder: string, balance: number, overdraftLimit: number) {
+            super(holder, balance);
             this.overdraftLimit = overdraftLimit;
         }
 
@@ -25,24 +26,43 @@ export const bootstrap = (): void => {
         }
     }
 
-    const a = new BankAccount('Roger', 23000);
-    const b = new CheckingAccount(25000);
+    class SavingsAccount extends BankAccount {
+        private interestRate: number;
 
-    console.log(a);
-    console.log(typeof a);
-    console.log(a instanceof BankAccount);
-    console.log(a instanceof CheckingAccount);
+        constructor(holder: string, balance: number, interestRate: number) {
+            super(holder, balance);
+            this.interestRate = interestRate;
+        }
 
-    function showDetails(account: BankAccount | CheckingAccount): void {
-        if (account instanceof BankAccount) {
-            console.log(account.getHolder());
-        } else if (account instanceof CheckingAccount) {
-            console.log(account.getOverdraftLimit());
-        } else {
-            console.error('Conta não identificada');
+        public getInterestRate(): number {
+            return this.interestRate;
         }
     }
 
-    showDetails(a);
-    showDetails(b);
+    // lista de contas bancárias (LSP)
+    const accountList: BankAccount[] = [
+        new CheckingAccount('Francisco', 2300, 5000),
+        new SavingsAccount('Jose', 4300, 0.005),
+        new CheckingAccount('Silvana', 5600, 2000),
+        new SavingsAccount('Gomes', 7600, 0.006),
+    ];
+
+    function processAccounts(accounts: BankAccount[]): void {
+        accounts.forEach((account) => {
+            if (account instanceof CheckingAccount) {
+                console.log(
+                    'Processando a conta corrente: ',
+                    account.getOverdraftLimit(),
+                );
+            } else if (account instanceof SavingsAccount) {
+                console.log(
+                    'Processando a conta poupança: ',
+                    account.getInterestRate(),
+                );
+            }
+            console.log('-------------------------');
+        });
+    }
+
+    processAccounts(accountList);
 };
