@@ -1,3 +1,5 @@
+import { Acomodacao } from "@/app/principal/page";
+
 export default function Compra() {
-    return <h1>Página de Compras</h1>
+    return Acomodacao()
 }
