@@ -1,5 +1,5 @@
-import { Acomodacao } from "@/app/principal/page";
+import { Acomodacao } from "@/components/interface"
 
-export default function Compra() {
+export default function Pagina() {
     return Acomodacao()
 }
