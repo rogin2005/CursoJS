@@ -18,13 +18,25 @@ export function Menu() {
 
 export function Cabecalho( props: any ) {
     return (
-        <div className="bg-blue-700">
-            <h1>Logo</h1>
+        <div className="bg-blue-200">
             <p>{props.titulo}</p>
-            <p>{props.preco}</p>
-            {Menu()}
+            <p>{props.subtitulo}</p>
         </div>
     )
 }
 
+export function Rodape() {
+    return (
+        <div className="bg-blue-200">
+            <p>Rodapé</p>
+        </div>
+    )
+}
 
+export function Conteudo( props: any ) {
+    return (
+        <div className="bg-gray-200">
+            {props.children}
+        </div>
+    )
+}
