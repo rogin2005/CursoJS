@@ -1,11 +1,19 @@
 'use client'
 
+import { useState } from "react"
+
 export default function Page() {
 
-    let numero = 0
+    // let numero = 0
+    let [numero, setNumero] = useState(0) // [numero, funcao]
     function incrementar() {
-        numero += 1
-        console.log("número: " + numero)
+        // numero += 1
+        setNumero( numero + 1 )
+        // console.log("número: " + numero)
+    }
+
+    function decrementar() {
+        setNumero( numero - 1 )
     }
 
     return (
@@ -15,7 +23,14 @@ export default function Page() {
             onClick={incrementar}
             className="bg-blue-400 p-2"
             >
-                Clique aqui
+                Incrementar
+            </button> <br />
+
+            <button
+            onClick={decrementar}
+            className="bg-blue-400 p-2"
+            >
+                Decrementar
             </button>
 
             <p>Número: { numero }</p>
