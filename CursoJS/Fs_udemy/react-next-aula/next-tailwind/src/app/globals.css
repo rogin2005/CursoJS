@@ -25,21 +25,48 @@ body {
   font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* @layer components {
+  .btn {
+    @apply px-4 py-2 rounded-md;
+  }
+
+  .btn-sucesso {
+    @apply btn;
+    @apply bg-green-500 text-white hover:bg-green-400;
+  }
+
+  .btn-info {
+    @apply btn;
+    @apply bg-orange-500 text-white hover:bg-orange-400
+  }
+
+  .btn-erro {
+    @apply btn;
+    @apply bg-red-500 text-white hover:bg-red-400
+  }
+
+} */
+
+
 @component btn {
   @apply px-4 py-2 rounded-md;
-}
+} 
 
 .btn-sucesso {
   @apply btn;
+  @apply bg-green-500 text-white hover:bg-green-400;
 }
 
 .btn-info {
   @apply btn;
+  @apply bg-orange-500 text-white hover:bg-orange-400
 }
 
 .btn-erro {
   @apply btn;
-}
+  @apply bg-red-500 text-white hover:bg-red-400
+} 
 
 
 
