@@ -48,6 +48,10 @@ body {
 
 } */
 
+@utility caixa {
+  @apply px-4 py-2 rounded-md;
+  @apply bg-orange-400 text-white ;
+}
 
 @utility btn {
   @apply px-4 py-2 rounded-md;
