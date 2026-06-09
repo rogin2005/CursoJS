@@ -21,7 +21,7 @@ export function AplicacaoLargura() {
 
 
 
-export default function Aplicacao() {
+export function AplicacaoLargura2() {
     return (
         <div>
             {/* w-96, w-[500px], w-full, max-w-sm, w-screen, size-40 */}
@@ -32,6 +32,28 @@ export default function Aplicacao() {
             </div>
 
             <div className="bg-purple-500 size-40">Tamanho</div>
+
+
+            <div className="bg-purple-500 size-40">Tamanho</div>
+
+        </div>
+    )
+}
+
+
+
+export default function Aplicacao() {
+    return (
+        <div className="bg-blue-300 h-screen">
+            {/* h-96, h-[500px], h-full, h-screen, h-dvh, h-lvh, h-svh */}
+            
+            <div className="bg-purple-500 h-1/2">
+                Item 1
+            </div>
+
+            <div className="bg-red-500 h-1/2">
+                Item 2
+            </div>
 
         </div>
     )
